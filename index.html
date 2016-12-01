@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Spring Boot - Skeleton to Production</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<style type="text/css">
+			.reveal h1 {
+				text-transform: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Spring Boot</h1>
+					<h2>Skeleton to Production</h2>
+					<h4>Wie wir Spring Boot in Polaris, Osiam und OX genutzt haben.</h4>
+				</section>
+				<section>
+					<h1>Agenda</h1>
+					<ul>
+						<li>Einführung</li>
+						<li>1-skeleton</li>
+						<li>2-first-endpoint</li>
+						<li>3-configuration</li>
+						<li>4-testing</li>
+						<li>5-authentication</li>
+						<li>6-actuator</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Einführung</h1>
+					<ul>
+						<li>(Microservice) Framework</li>
+						<li>Convention over Configuration</li>
+						<li>Opinionated Spring</li>
+						<li>Standard Konfiguration durch *AutoConfiguration Klassen (Sensible Defaults)</li>
+						<li>Sehr viele Integrationen und Erweiterungen durch <a href="http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-starter" target="_blank">Spring Boot Starter</a></li>
+						<li>Sehr gute Dokumentation</li>
+						<li>Viele Möglichkeiten Spring Boot Apps zu konfigurieren</li>
+						<li><a href="https://github.com/dacrome/spring-boot-skeleton-to-production" target="_blank">GitHub Repo zum Vortrag</a></li>
+					</ul>
+				</section>
+				<section>
+					<h1>1-skeleton</h1>
+					<ul>
+						<li><a href="https://start.spring.io" target="_blank">start.spring.io</a></li>
+						<li>Startbar mit</li>
+						<ul>
+							<li>Gradle/Maven Plugin</li>
+							<li>java -jar</li>
+							<li><a href="http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#deployment-service" target="_blank">init script</a></li>
+						</ul>
+						<li>Und ein Killerfeature...</li>
+					</ul>
+				</section>
+				<section>
+					<h1>2-first-endpoint</h1>
+					<ul>
+						<li>App um RequestMapping erweitert der Servicenamen zurückgibt</li>
+					</ul>
+				</section>
+				<section>
+					<h1>3-configuration</h1>
+					<ul>
+						<li>Umfangreiches <a href="http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-external-config" target="_blank">konfigurieren</a> möglich</li>
+						<li>Konfiguration durch yaml und properties</li>
+						<li>Überschreiben der Config von außen</li>
+					</ul>
+				</section>
+				<section>
+					<h1>4-testing</h1>
+					<ul>
+						<li>Integrations-Tests mit dem Spock Framework</li>
+						<li>@SpringBootTest</li>
+						<li>@LocalServerPort</li>
+						<li>Überschreiben der default config</li>
+						<li>Injektion in Testklassen</li>
+						<li>@DirtiesContext</li>
+					</ul>
+				</section>
+				<section>
+					<h1>5-authentication</h1>
+					<ul>
+						<li>Spring Security</li>
+						<li>Thymeleaf templates</li>
+						<li>OSIAM</li>
+					</ul>
+				</section>
+				<section>
+					<h1>6-actuator</h1>
+					<ul>
+						<li><a href="http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready" target="_blank">Spring Boot Actuator</a></li>
+						<li>Monitoring</li>
+						<li>Metriken</li>
+						<li>Health checks</li>
+					</ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
